@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Athletic";
+    src: url("../fontes/New-Athletic-M54.woff");
+}
+
+@media (max-width:768px){
+    #texto-principal{
+        font-family: "Athletic";
+        text-align: center;
+        color: white;
+        opacity: 1;
+        font-size: 60px;
+    }
+}
+
+#navegacao{
+    padding: 15px 10px;
+    background: rgba(15,13,26,0.7);
+}
+
+#drop-menu{
+    background: rgba(15,13,26,0.7);
+}
+
+#drop-menu a:hover{
+    background:rgba(15,13,26,0.7);
+}
+
+.divisor{
+    width: 1px;
+    background: white;
+    margin: 12px 15px;
+}
+
+#navegacao ul li a{
+    color: white;
+    font-size: 1em;
+}
+
+#logo{
+    font-size: 1.5em;
+    color: white;
+}
+
+#navegacao ul li a:hover{
+    color: #ebbdef;
+}
+
+#logo a:hover{
+    color:white;
+}
+
+#principal{
+    background:url(../img/capas1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    opacity: 0.9;
+}
+
+#texto-principal{
+    font-family: "Athletic";
+    text-align: center;
+    color: white;
+    opacity: 1;
+}
+
+#principal{
+    text-align: center;
+}
+
+#botao-principal{
+    opacity: 0.8;
+    width: 300px;
+    height: 50px;
+    border-radius: 500px;
+    -webkit-border-radius:500px;
+    -moz-border-radius:500px;
+}
+/*login*/
+#formulario{
+    background:rgba(15,13,26,0.9);
+    width: 500px;
+    height: 350px;
+    padding: 10px;
+    color: white;
+
+}
+
+#formulario a{
+    color: #ebbdef;
+}
+
+#formulario h1{
+    color: #ebbdef;
+}
+
+/*cadastro*/
+
+#formulario-cadastro{
+    background:rgba(15,13,26,0.9);
+    width: 500px;
+    height: 380px;
+    padding: 10px;
+    color: white;
+
+}
+
+#formulario-cadastro a{
+    color: #ebbdef;
+}
+
+#formulario-cadastro h1{
+    color: #ebbdef;
+}
+
+
+#formulario-login{
+    width: 400px;
+    
+}
+#formulario-login button{
+    width: 400px;
+    
+}
+
+#ver-senha{
+    cursor: pointer;
+    width: 4%;
+    
+}
