@@ -18,10 +18,16 @@
     <section id="principal" class="d-flex">
         <div class="container align-self-center">
             <h1 id="texto-principal" class="display-3">Ler e desvendar mundos desconhecidos</h1>
+            <a href="cadastro.php">
             <button id="botao-principal" onmouseenter="aumentaBotao()" onmouseleave="diminueBotao()" id="botao-principal" class="btn btn-light btn-lg">Começe agora</button>
+            </a>
+            
         </div>
     </section>
 
-    
+    <footer style="height:500px;background:black;">
+
+    </footer>
+
     </body>
 </html>

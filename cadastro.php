@@ -23,10 +23,22 @@
                 <div>
                     <h1>Faça o seu cadastro</h1>
                     <p>Já possuí uma conta? <a href="login.php">Fazer login</a></p>
-                    <form action="" id="formulario-login" class="form-group">
-                        <input type="text" class="form-control mb-3" placeholder="Login">
-                        <input id="senha" type="password" class="form-control mb-3" placeholder="Senha">
-                        <input id="senha" type="password" class="form-control mb-3" placeholder="Confirme a senha">
+                    <form action="controla-cadastro-login.php?tipo=cadastro" method="post" id="formulario-login" class="form-group">
+                        <input name="usuario" type="text" class="form-control mb-3" placeholder="Usuário">
+                        <input name="senha" id="senha" type="password" class="form-control mb-3" placeholder="Senha">
+                        <input name="senha_confirma" id="senha" type="password" class="form-control mb-3" placeholder="Confirme a senha">
+                        <?php if(isset($_GET['erro']) && $_GET['erro'] == 1){ ?>
+                            <div class="text-danger mb-2">
+                                As senhas não coincidem
+                            </div>
+                        <?php } ?>
+
+                        <?php if(isset($_GET['erro']) && $_GET['erro'] == 2){ ?>
+                            <div class="text-danger mb-2">
+                                Nome de usuário já está em uso
+                            </div>
+                        <?php } ?>
+
                         <button type="submit" class="btn btn-lg btn-warning">Cadastre-se</button>
                     </form>
                 </div>

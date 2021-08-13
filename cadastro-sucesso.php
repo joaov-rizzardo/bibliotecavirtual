@@ -19,27 +19,12 @@
 
     <section id="principal" class="d-flex">
         <div class="container d-flex align-self-center justify-content-center">
-            <div id="formulario" class="d-flex justify-content-center">
-                <div>
-                    <h1>Acesse sua conta</h1>
-                    <p>Não possuí uma conta? <a href="cadastro.php">Clique aqui!</a></p>
-                    <form action="controla-cadastro-login.php?tipo=login" method="post" id="formulario-login" class="form-group">
-                        <input name="usuario" type="text" class="form-control mb-3" placeholder="Usuário">
-                        <div style="background:white; height:37px;" class="mb-3 form-group d-flex justify-content-start">
-                            <input name="senha" id="senha" style="width: 92%;border:none;height:37px;" type="password" class="form-control mb-3 mr-1 d-inline" placeholder="Senha">
-                            <i style="color:black;line-height: 37px;" onclick="verSenha()" id="ver-senha" class="fas fa-eye form-group d-inline"></i>
-                        </div>
-
-                        <?php if(isset($_GET['erro']) && $_GET['erro'] == 1){ ?>
-
-                            <div class="text-danger mb-2">
-                                Usuário e/ou senha incorretos
-                            </div>
-                        <?php } ?>
-                        
-                        <button type="submit" class="btn btn-lg btn-warning">Fazer login</button>
-                    </form>
-                    <a href="">Esqueceu sua senha? Clique aqui!</a>
+            <div id="formulario-cadastro-sucesso"  class="d-flex justify-content-center">
+                <div class="align-self-center">
+                    <h1>Cadastrado com sucesso</h1>
+                    <p>Faça login para acessar sua nova conta</p>
+                    <a class="btn btn-warning btn-lg" href="login.php">Fazer login</a>
+                     
                 </div>
             </div>
         </div>
