@@ -12,7 +12,11 @@
         font-size: 60px;
     }
 }
-
+body{
+    background:url(../img/capas1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
 #navegacao{
     padding: 15px 10px;
     background: rgba(15,13,26,0.7);
@@ -51,9 +55,6 @@
 }
 
 #principal{
-    background:url(../img/capas1.jpg);
-    background-size: cover;
-    background-attachment: fixed;
     height: 100%;
     opacity: 0.9;
 }
@@ -114,6 +115,25 @@
     color: #ebbdef;
 }
 
+/*cadastro-sucesso*/
+#formulario-cadastro-sucesso{
+    background:rgba(15,13,26,0.9);
+    width: 500px;
+    height: 220px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+
+}
+
+#formulario-cadastro-sucesso h1{
+    color: #ebbdef;
+}
+
+#formulario-cadastro-sucesso a{
+    width: 400px;
+}
+
 
 #formulario-login{
     width: 400px;
@@ -126,6 +146,8 @@
 
 #ver-senha{
     cursor: pointer;
-    width: 4%;
+    color: gray;
     
 }
+
+
