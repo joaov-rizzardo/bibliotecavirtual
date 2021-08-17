@@ -112,3 +112,23 @@ body{
 hr{
     background: rgb(83, 80, 80);
 }
+
+#mensagem{
+    background-color: rgba(15,13,26,0.7);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+#livro-detalhes img{
+    width: 300px;
+}
+
+#livro-detalhes{
+    color: #e5e5e5;
+}
+
+#livro-detalhes h4{
+    font-style: italic;
+}

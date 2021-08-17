@@ -14,6 +14,10 @@
        function removeLivro(id_livro, id_usuario){
             location.href = 'controle_livro.php?acao=remover&id_livro='+id_livro+'&id_usuario='+id_usuario
        }
+
+       function adicionar(id_livro, id_usuario) {
+            location.href = 'controle_livro.php?acao=adicionar&id_livro=' + id_livro + '&id_usuario=' + id_usuario
+        }
     </script>
 
 
@@ -25,39 +29,48 @@
     require_once('navegacao_usuario.php');
     require_once('conexao.php');
     require_once('livro_classe.php');
+    
+    $categoria = $_GET['categoria'];
+    if( $categoria == 1){
+        $nome_categoria = 'Ficção Científica';
+    }else if($categoria == 2){
+        $nome_categoria = 'Romance';
+    }else if($categoria == 3){
+        $nome_categoria = 'Aventura';
+    }else if($categoria == 4){
+        $nome_categoria = 'Infantil';
+    }
+
     ?>
     <div style="margin-top: 95px;" class="text-white">
-        <h4 class="mb-2 ml-4">Biblioteca pessoal</h4>
+        <h4 class="mb-2 ml-5"><?=$nome_categoria?></h4>
     </div>
-    <hr>
-    <section id="categorias">
-       <?php if(isset($_GET['evento']) && $_GET['evento'] == 'livroRemovido'){ ?>
-        <div id="mensagem" class="">
-            O livro foi removido de sua biblioteca
-        </div>
-        <?php } ?>
-        <?php if (isset($_GET['evento']) && $_GET['evento'] == 'livroAdicionado') { ?>
-            <div id="mensagem" class="">
-                O livro foi adicionado em sua biblioteca
-            </div>
-        <?php } ?>
+    <section  id="categorias">
         <div class="row justify-content-start">
             <?php
                 $conexao = new Conexao();
                 $livro = new Livro($conexao);
-                $livros = $livro->recuperarLivrosUsuario($_SESSION['id_usuario']);
+                $livros = $livro->recuperarLivrosCategoria($_GET['categoria']);
 
                 foreach($livros as $livro){
             ?>
-            <div  class="livro-secao col-xl-2 d-inline-block mr-4 ml-4 mb-4">
+            <div  class="livro-secao col-xl-2 mr-4 ml-4 mb-4">
                     <a href="livro_detalhes.php?id_livro=<?=$livro->id_livro?>">
                         <img src="img/<?=$livro->capa_livro?>" alt="">
                         <h5><?=$livro->titulo_livro?></h5>
                         <p><?=$livro->autor_livro?></p>
                     </a>
-                    <button onclick="removeLivro(<?=$livro->id_livro?>,<?=$_SESSION['id_usuario']?>)" class="btn btn btn-outline-info">Remover livro</button>
+                    <?php
+                    $livro1 = new Livro($conexao);
+                    $teste = $livro1->verificarLivroUsuario($livro->id_livro, $_SESSION['id_usuario']);
+
+                    if (count($teste) == 0) {
+                    ?>
+                        <button onclick="adicionar('<?= $livro->id_livro ?>','<?= $_SESSION['id_usuario'] ?>')" class="btn btn-outline-info">Adicionar a biblioteca</button>
+                    <?php } else { ?>
+                        <button disabled="disabled" class="btn btn btn-outline-info">Adicionado <i class="fas fa-check"></i></button>
+                    <?php } ?>
             </div>
-            
             <?php } ?>          
 
         </div>

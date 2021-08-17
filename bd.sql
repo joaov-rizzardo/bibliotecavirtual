@@ -91,3 +91,13 @@ values('Carlo Collodi','pinoquio.jpg',4,'Em seu percurso de transformação de b
 
 insert into tb_livro(autor_livro, capa_livro, id_categoria, sinopse_livro,titulo_livro)
 values('Jonathan Swift','guliver.jpg',4,'Durante sua primeira viagem, após escapar de um naufrágio, Gulliver é aprisionado por uma raça de pessoas minúsculas, com menos de 15 centímetros de altura, que são os habitantes da ilha de Lilliput.','As viagens de Guliver');
+
+create table tb_livro_usuario(
+	id_livro_usuario int PRIMARY KEY AUTO_INCREMENT,
+    id_livro int not null,
+    id_usuario int not null,
+    FOREIGN KEY(id_livro) REFERENCES tb_livro(id_livro),
+    FOREIGN KEY(id_usuario) REFERENCES tb_usuario(id_usuario)
+);
+
+
