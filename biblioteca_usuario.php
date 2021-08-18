@@ -32,12 +32,12 @@
     <hr>
     <section id="categorias">
        <?php if(isset($_GET['evento']) && $_GET['evento'] == 'livroRemovido'){ ?>
-        <div id="mensagem" class="">
+        <div id="mensagem" class="text-success">
             O livro foi removido de sua biblioteca
         </div>
         <?php } ?>
         <?php if (isset($_GET['evento']) && $_GET['evento'] == 'livroAdicionado') { ?>
-            <div id="mensagem" class="">
+            <div id="mensagem" class="text-success">
                 O livro foi adicionado em sua biblioteca
             </div>
         <?php } ?>

@@ -27,7 +27,13 @@ session_start();
                     $_SESSION['nome_usuario'] = $usuario->nome_usuario;
                     $_SESSION['id_status'] = $usuario->id_status;
 
-                    header('Location: home.php');
+                    if($usuario->id_status == 1){
+                        header('Location: home.php');
+                    }else if($usuario->id_status == 2){
+                        header('Location: home_admin.php');
+                    }
+
+                    
                 }
             }
         }
