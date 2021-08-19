@@ -160,3 +160,35 @@ input[type='file']{
     display: none;
 }
 
+#chamado{
+    border-radius: 10px;
+    border: 1px solid rgb(83, 80, 80);
+    color: white;
+    padding: 20px;
+    margin-left:30px;
+    margin-right: 30px;
+    margin-top: 10px;
+    text-align: start;
+}
+
+#chamado button{
+    width: 100%;
+}
+
+#chamado h5{
+    color:#ebbdef;
+}
+
+#chamado-detalhes{
+    border-radius: 10px;
+    border: 1px solid rgb(83, 80, 80);
+    color: white;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: start;
+}
+
+#chamado-detalhes h5{
+    color:#ebbdef;
+}

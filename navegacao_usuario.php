@@ -7,8 +7,12 @@
     <div class="collapse navbar-collapse" id="nav-target1">
       <ul class="navbar-nav ml-auto">
 
-        <li class="nav-item">
-          <a class="nav-link" href="">Suporte</a>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Suporte</a>
+          <div class="dropdown-menu" id="drop-menu">
+            <a class="dropdown-item" href="suporte.php">Abrir um chamado</a>
+            <a class="dropdown-item" href="consultar_chamados.php">Consultar meus chamados</a>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Categorias</a>

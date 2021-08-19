@@ -30,7 +30,12 @@ require_once 'livro_classe.php';
 ?>
 
 <body>
-    <section style="margin-top: 85px;">
+    <section style="margin-top: 85px;" class="d-flex">
+    <?php if (isset($_GET['evento']) && $_GET['evento'] == 'errocampo') { ?>
+            <div id="mensagem" class="text-warning">
+                Todos os campos devem ser preenchidos
+            </div>
+        <?php } ?>
         <?php if (isset($_GET['evento']) && $_GET['evento'] == 'livroInserido') { ?>
             <div id="mensagem" class="text-success">
                 O livro foi inserido com sucesso

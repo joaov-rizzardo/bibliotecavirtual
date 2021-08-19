@@ -49,23 +49,29 @@
         $sinopse_livro = $_POST['sinopse'];
         $capa_livro = $_FILES['capa']['name'];
 
-        $conexao = new Conexao();
-
-        $livro = new Livro($conexao);
-
-        $livro->__set('titulo_livro',$titulo_livro)->__set('autor_livro',$autor_livro)->__set('categoria_livro',$categoria_livro)->__set('sinopse_livro',$sinopse_livro)->__set('capa_livro',$capa_livro);
-        if(count($livro->verificaLivro()) > 0){
-            header('Location: adicionar_livros.php?evento=livroexiste');
-        }else if(count($livro->verificaCapa()) > 0){
-            header('Location: adicionar_livros.php?evento=capaexiste');
+        if($titulo_livro == '' || $autor_livro == '' || $categoria_livro == '' || $sinopse_livro == '' || $capa_livro == ''){
+            header('Location: adicionar_livros.php?evento=errocampo');
         }else{
-            $livro->inserirLivro();
+            $conexao = new Conexao();
 
-            move_uploaded_file($_FILES['capa']['tmp_name'],$diretorioUpload);
+            $livro = new Livro($conexao);
     
-            header('Location: adicionar_livros.php?evento=livroInserido');
-            
+            $livro->__set('titulo_livro',$titulo_livro)->__set('autor_livro',$autor_livro)->__set('categoria_livro',$categoria_livro)->__set('sinopse_livro',$sinopse_livro)->__set('capa_livro',$capa_livro);
+            if(count($livro->verificaLivro()) > 0){
+                header('Location: adicionar_livros.php?evento=livroexiste');
+            }else if(count($livro->verificaCapa()) > 0){
+                header('Location: adicionar_livros.php?evento=capaexiste');
+            }else{
+                $livro->inserirLivro();
+    
+                move_uploaded_file($_FILES['capa']['tmp_name'],$diretorioUpload);
+        
+                header('Location: adicionar_livros.php?evento=livroInserido');
+                
+            }
         }
+
+        
         
     }
 

@@ -25,9 +25,5 @@
         </div>
     </section>
 
-    <footer style="height:500px;background:black;">
-
-    </footer>
-
     </body>
 </html>

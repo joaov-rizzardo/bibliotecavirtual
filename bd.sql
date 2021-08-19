@@ -100,4 +100,15 @@ create table tb_livro_usuario(
     FOREIGN KEY(id_usuario) REFERENCES tb_usuario(id_usuario)
 );
 
+create table tb_chamado(
+    id_chamado int not null primary key AUTO_INCREMENT,
+    assunto_chamado varchar(100) not null,
+    categoria_chamado varchar(50) not null,
+    descricao_chamado varchar(1000) not null,
+    status_chamado varchar(20) default 'Pendente',
+    data_chamado datetime default CURRENT_TIMESTAMP,
+    id_usuario int not null,
+    foreign key(id_usuario) references tb_usuario(id_usuario)
+   );
+
 
